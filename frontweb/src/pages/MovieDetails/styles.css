@@ -1,0 +1,49 @@
+.movie-details-container {
+  padding: 17px 10px;
+}
+
+.movie-details-container h1 {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.movie-evaluation-form {
+  background-color: #6c6c6c;
+  border-radius: 4px;
+  padding: 20px 10px;
+  margin-bottom: 18px;
+}
+
+.evaluation-button {
+  width: 100%;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.evaluation-input {
+  margin-bottom: 17px;
+}
+
+.movie-evaluation-list {
+  background-color: #6c6c6c;
+  padding: 17px 10px;
+}
+
+.movie-evaluation-item h3 {
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 9px;
+}
+
+.movie-evaluation-item p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #9e9e9e;
+  text-align: justify;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  padding: 10px 28px 21px 12px;
+  letter-spacing: -0.015em;
+}

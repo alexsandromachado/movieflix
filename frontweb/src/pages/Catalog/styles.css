@@ -1,0 +1,22 @@
+.catalog-container {
+  padding: 40px;
+}
+
+.catalog-container h1 {
+  color: #ffffff;
+  margin-bottom: 40px;
+}
+
+.list-container li {
+  list-style-type: none;
+  font-size: 24px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+  margin-bottom: 27px;
+}
+
+.list-container ul {
+  margin: 0;
+  padding: 0;
+}

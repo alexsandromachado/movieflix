@@ -70,12 +70,11 @@ const Home = () => {
               },
             })}
             type="text"
-            className={`form-control base-input ${
+            className={`form-control base-input login-input ${
               errors.username ? 'is-invalid' : ''
             }`}
             id="email"
             placeholder="Email"
-            required
           />
           <div className="invalid-feedback d-block">
             {errors.username?.message}
@@ -86,11 +85,15 @@ const Home = () => {
               required: 'Campo obrigatório',
             })}
             type="text"
-            className="form-control login-input"
+            className={`form-control base-input login-input ${
+              errors.password ? 'is-invalid' : ''
+            }`}
             id="password"
             placeholder="Senha"
-            required
           />
+           <div className="invalid-feedback d-block">
+            {errors.password?.message}
+          </div>
 
             <button className="btn btn-primary btn-lg login-button">
               FAZER LOGIN

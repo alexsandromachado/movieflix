@@ -5,6 +5,8 @@
 .movie-details-container h1 {
   font-size: 24px;
   color: #ffffff;
+  max-width: 265px;
+  margin-bottom: 18px;
 }
 
 .movie-evaluation-form {
@@ -12,10 +14,12 @@
   border-radius: 4px;
   padding: 20px 10px;
   margin-bottom: 18px;
+  text-align: center;
 }
 
 .evaluation-button {
   width: 100%;
+  max-width: 335px;
   color: #000000;
   font-size: 16px;
   font-weight: 700;
@@ -29,12 +33,24 @@
 .movie-evaluation-list {
   background-color: #6c6c6c;
   padding: 17px 10px;
+  border-radius: 4px;
 }
 
-.movie-evaluation-item h3 {
+.name-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.name-container h3 {
   font-size: 16px;
   color: #ffffff;
   margin-bottom: 9px;
+  margin-left: 16px;
+  align-content: center;
+}
+
+.star-image {
+    padding-left: 15px;
 }
 
 .movie-evaluation-item p {
@@ -46,4 +62,22 @@
   border-radius: 4px;
   padding: 10px 28px 21px 12px;
   letter-spacing: -0.015em;
+}
+
+@media (min-width: 576px) {
+  .movie-details-container h1 {
+    max-width: none;
+    padding-bottom: 25px;
+    margin: 0px;
+  }
+}
+
+@media (min-width: 768px) {
+  .movie-details-container {
+    padding: 36px 40px;
+  }
+
+  .star-image {
+    padding-left: 19px;
+}
 }

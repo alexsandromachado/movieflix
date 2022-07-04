@@ -27,8 +27,22 @@
     padding: 40px;
   }
 
+  .catalog-container h1 {
+    font-size: 36px;
+  }
+
+  .list-container li {
+    font-size: 20px;
+    margin-bottom: 27px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .catalog-container h1 {
+    font-size: 48px;
+  }
+
   .list-container li {
     font-size: 24px;
-    margin-bottom: 27px;
   }
 }

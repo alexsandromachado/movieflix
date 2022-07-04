@@ -1,5 +1,6 @@
 .main-nav {
   padding-left: 18px;
+  padding-right: 10px;
   min-height: 70px;
   background-color: #f6f6f6;
 }
@@ -7,4 +8,25 @@
 .nav-logo {
   font-size: 24px;
   margin: 0px;
+}
+
+.logout-button {
+  border: 1px solid black;
+  font-size: 14px;
+  font-weight: 700;
+  width: 98px;
+  height: 30px;
+  padding: 0;
+  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  .main-nav {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .nav-logo {
+    margin-right: 40px;
+  }
 }

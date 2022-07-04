@@ -1,15 +1,15 @@
+import { ReactComponent as StarImage } from 'assets/images/star.svg';
 import { Link } from 'react-router-dom';
 import './styles.css';
 
 const MovieDetails = () => {
   return (
     <div className="movie-details-container">
-      <h1>Tela detalhes do filmes</h1>
-      <h1>id: 1</h1>
+      <h1>Tela detalhes do filme id: 1</h1>
       <div className="movie-evaluation-form">
         <input
           type="text"
-          className="form-control login-input"
+          className="form-control evaluation-input"
           id="evaluation"
           placeholder="Deixe sua avaliação aqui"
           required
@@ -22,25 +22,56 @@ const MovieDetails = () => {
       </div>
       <div className="movie-evaluation-list">
         <div className="movie-evaluation-item">
-          <h3>Maria Silva</h3>
+          <div className="name-container">
+            <div className="star-image">
+              <StarImage />
+            </div>
+            <h3>Maria Silva</h3>
+          </div>
           <p>
             Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
           </p>
         </div>
         <div className="movie-evaluation-item">
-          <h3>Maria Silva</h3>
+          <div className="name-container">
+            <div className="star-image">
+              <StarImage />
+            </div>
+            <h3>Maria Silva</h3>
+          </div>
           <p>
             Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
           </p>
         </div>
         <div className="movie-evaluation-item">
-          <h3>Maria Silva</h3>
+          <div className="name-container">
+            <div className="star-image">
+              <StarImage />
+            </div>
+            <h3>Maria Silva</h3>
+          </div>
           <p>
             Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
           </p>
         </div>
         <div className="movie-evaluation-item">
-          <h3>Maria Silva</h3>
+          <div className="name-container">
+            <div className="star-image">
+              <StarImage />
+            </div>
+            <h3>Maria Silva</h3>
+          </div>
+          <p>
+            Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
+          </p>
+        </div>
+        <div className="movie-evaluation-item">
+          <div className="name-container">
+            <div className="star-image">
+              <StarImage />
+            </div>
+            <h3>Maria Silva</h3>
+          </div>
           <p>
             Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
           </p>

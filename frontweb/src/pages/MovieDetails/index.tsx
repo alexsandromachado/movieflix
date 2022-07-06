@@ -1,82 +1,50 @@
-import { ReactComponent as StarImage } from 'assets/images/star.svg';
-import { Link } from 'react-router-dom';
+import { AxiosRequestConfig } from 'axios';
+import ReviewFormCard from 'components/ReviewFormCard';
+import ReviewListCard from 'components/ReviewListCard';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { Review } from 'types/reviews';
+import { hasAnyRoles } from 'utils/auths';
+import { requestBackend } from 'utils/requests';
+
 import './styles.css';
 
+type UrlParams = {
+  movieId: string;
+};
+
 const MovieDetails = () => {
+
+  const { movieId } = useParams<UrlParams>();
+
+  const [reviews, setReviews] = useState<Review[]>([]);
+
+  useEffect(() => {
+    const config: AxiosRequestConfig = {
+      method: 'GET',
+      url: `/movies/${movieId}/reviews`,
+      withCredentials: true
+    };
+
+    requestBackend(config)
+      .then((response) => {
+        setReviews(response.data);
+        console.log('response:')
+        console.log(response.data);
+      });
+  }, [movieId]);
+
   return (
     <div className="movie-details-container">
-      <h1>Tela detalhes do filme id: 1</h1>
-      <div className="movie-evaluation-form">
-        <input
-          type="text"
-          className="form-control evaluation-input"
-          id="evaluation"
-          placeholder="Deixe sua avaliação aqui"
-          required
-        />
-        <Link to="/catalog">
-          <button className="btn btn-primary btn-lg evaluation-button">
-            Salvar avaliação
-          </button>
-        </Link>
-      </div>
-      <div className="movie-evaluation-list">
-        <div className="movie-evaluation-item">
-          <div className="name-container">
-            <div className="star-image">
-              <StarImage />
-            </div>
-            <h3>Maria Silva</h3>
-          </div>
-          <p>
-            Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
-          </p>
-        </div>
-        <div className="movie-evaluation-item">
-          <div className="name-container">
-            <div className="star-image">
-              <StarImage />
-            </div>
-            <h3>Maria Silva</h3>
-          </div>
-          <p>
-            Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
-          </p>
-        </div>
-        <div className="movie-evaluation-item">
-          <div className="name-container">
-            <div className="star-image">
-              <StarImage />
-            </div>
-            <h3>Maria Silva</h3>
-          </div>
-          <p>
-            Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
-          </p>
-        </div>
-        <div className="movie-evaluation-item">
-          <div className="name-container">
-            <div className="star-image">
-              <StarImage />
-            </div>
-            <h3>Maria Silva</h3>
-          </div>
-          <p>
-            Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
-          </p>
-        </div>
-        <div className="movie-evaluation-item">
-          <div className="name-container">
-            <div className="star-image">
-              <StarImage />
-            </div>
-            <h3>Maria Silva</h3>
-          </div>
-          <p>
-            Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
-          </p>
-        </div>
-      </div>
+      <h1>Tela detalhes do filme id: {movieId}</h1>
+
+
+      {hasAnyRoles(['ROLE_MEMBER']) && (
+        <ReviewFormCard movieId={movieId} />
+      )}
+     {reviews &&
+     <ReviewListCard reviews={reviews}/>
+     }
     </div>
   );
 };

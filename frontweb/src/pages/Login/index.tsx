@@ -17,10 +17,10 @@ type LocationState = {
   from: string;
 };
 
-const Home = () => {
+const Login = () => {
   const location = useLocation<LocationState>();
 
-  const { from } = location.state || { from: { pathname: '/catalog' } };
+  const { from } = location.state || { from: { pathname: '/movies' } };
 
   const { setAuthContextData } = useContext(AuthContext);
 
@@ -52,7 +52,7 @@ const Home = () => {
   };
 
   return (
-    <div className="home-container">
+    <div className="login-container">
       <div className="login-card">
         <h1>LOGIN</h1>
         {hasError && (
@@ -111,4 +111,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Login;

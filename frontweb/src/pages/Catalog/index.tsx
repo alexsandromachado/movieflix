@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './styles.css';
 
 const Catalog = () => {
@@ -7,10 +8,14 @@ const Catalog = () => {
       <div className="list-container">
         <ul>
           <li>
-            <p>Acessar /movies/1</p>
+            <Link to="/movies/1">
+              <p>Acessar /movies/1</p>
+            </Link>
           </li>
           <li>
-            <p>Acessar /movies/2</p>
+            <Link to="/movies/2">
+              <p>Acessar /movies/2</p>
+            </Link>
           </li>
         </ul>
       </div>

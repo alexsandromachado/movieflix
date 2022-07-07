@@ -91,13 +91,13 @@ const Login = () => {
             id="password"
             placeholder="Senha"
           />
-           <div className="invalid-feedback d-block">
+          <div className="invalid-feedback d-block">
             {errors.password?.message}
           </div>
 
-            <button className="btn btn-primary btn-lg login-button">
-              FAZER LOGIN
-            </button>
+          <button className="btn btn-primary btn-lg login-button">
+            FAZER LOGIN
+          </button>
         </form>
       </div>
       <div className="img-card">

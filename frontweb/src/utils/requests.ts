@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from "axios";
+import axios, { AxiosRequestConfig } from 'axios';
 import qs from 'qs';
 import { getAuthData } from './storage';
 
@@ -14,32 +14,32 @@ type LoginData = {
 };
 
 export const requestBackendLogin = (loginData: LoginData) => {
-    const headers = {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      Authorization: 'Basic ' + window.btoa(CLIENT_ID + ':' + CLIENT_SECRET),
-    };
-  
-    const data = qs.stringify({
-      ...loginData,
-      grant_type: 'password',
-    });
-  
-    return axios({
-      method: 'POST',
-      baseURL: BASE_URL,
-      url: '/oauth/token',
-      data,
-      headers,
-    });
+  const headers = {
+    'Content-Type': 'application/x-www-form-urlencoded',
+    Authorization: 'Basic ' + window.btoa(CLIENT_ID + ':' + CLIENT_SECRET),
   };
 
-  export const requestBackend = (config: AxiosRequestConfig) => {
-    const headers = config.withCredentials
-      ? {
-          ...config.headers,
-          Authorization: 'Bearer ' + getAuthData().access_token,
-        }
-      : config.headers;
-  
-    return axios({ ...config, baseURL: BASE_URL, headers });
-  };
+  const data = qs.stringify({
+    ...loginData,
+    grant_type: 'password',
+  });
+
+  return axios({
+    method: 'POST',
+    baseURL: BASE_URL,
+    url: '/oauth/token',
+    data,
+    headers,
+  });
+};
+
+export const requestBackend = (config: AxiosRequestConfig) => {
+  const headers = config.withCredentials
+    ? {
+        ...config.headers,
+        Authorization: 'Bearer ' + getAuthData().access_token,
+      }
+    : config.headers;
+
+  return axios({ ...config, baseURL: BASE_URL, headers });
+};

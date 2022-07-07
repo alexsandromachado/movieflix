@@ -14,7 +14,6 @@ type UrlParams = {
 };
 
 const MovieDetails = () => {
-
   const { movieId } = useParams<UrlParams>();
 
   const [reviews, setReviews] = useState<Review[]>([]);
@@ -23,28 +22,30 @@ const MovieDetails = () => {
     const config: AxiosRequestConfig = {
       method: 'GET',
       url: `/movies/${movieId}/reviews`,
-      withCredentials: true
+      withCredentials: true,
     };
 
-    requestBackend(config)
-      .then((response) => {
-        setReviews(response.data);
-        console.log('response:')
-        console.log(response.data);
-      });
+    requestBackend(config).then((response) => {
+      setReviews(response.data);
+      console.log('response:');
+      console.log(response.data);
+    });
   }, [movieId]);
+
+  const handleInsertReview = (review: Review) => {
+    const clone = [...reviews];
+    clone.push(review);
+    setReviews(clone);
+  };
 
   return (
     <div className="movie-details-container">
       <h1>Tela detalhes do filme id: {movieId}</h1>
 
-
       {hasAnyRoles(['ROLE_MEMBER']) && (
-        <ReviewFormCard movieId={movieId} />
+        <ReviewFormCard movieId={movieId} onInsertReview={handleInsertReview} />
       )}
-     {reviews &&
-     <ReviewListCard reviews={reviews}/>
-     }
+      {reviews && <ReviewListCard reviews={reviews} />}
     </div>
   );
 };

@@ -1,0 +1,26 @@
+.movie-review-form {
+  background-color: #6c6c6c;
+  border-radius: 4px;
+  padding: 20px 10px;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.review-button {
+  width: 100%;
+  max-width: 335px;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.review-input {
+  margin-bottom: 17px;
+}
+
+@media (min-width: 768px) {
+  .movie-review-form {
+  padding: 24px 20px;
+  }
+}

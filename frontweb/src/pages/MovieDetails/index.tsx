@@ -27,8 +27,6 @@ const MovieDetails = () => {
 
     requestBackend(config).then((response) => {
       setReviews(response.data);
-      console.log('response:');
-      console.log(response.data);
     });
   }, [movieId]);
 

@@ -2,6 +2,7 @@ import { AxiosRequestConfig } from 'axios';
 import { useForm } from 'react-hook-form';
 import { Review } from 'types/reviews';
 import { requestBackend } from 'utils/requests';
+import { toast } from 'react-toastify';
 import './styles.css';
 
 type Props = {
@@ -15,7 +16,15 @@ type FormData = {
 };
 
 const ReviewFormCard = ({ movieId, onInsertReview }: Props) => {
-  const { register, handleSubmit, setValue } = useForm<FormData>();
+  const { register, handleSubmit, setValue, getValues } = useForm<FormData>();
+
+  const handleReview = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (getValues('text') === '') {
+      toast.error('Erro ao cadastrar Avaliação');
+    } else {
+      toast.info('avaliação cadastrada');
+    }
+  };
 
   const onSubmit = (formData: FormData) => {
     formData.movieId = parseInt(movieId);
@@ -50,7 +59,10 @@ const ReviewFormCard = ({ movieId, onInsertReview }: Props) => {
           placeholder="Deixe sua avaliação aqui"
           required
         />
-        <button className="btn btn-primary btn-lg review-button">
+        <button
+          className="btn btn-primary btn-lg review-button"
+          onClick={handleReview}
+        >
           Salvar avaliação
         </button>
       </form>

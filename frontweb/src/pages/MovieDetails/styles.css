@@ -22,3 +22,11 @@
     padding: 36px 40px;
   }
 }
+
+@media (min-width: 1400px) {
+  .movie-details-container {
+    max-width: 1120px;
+    display: flex;
+    flex-direction: column;
+  }
+}

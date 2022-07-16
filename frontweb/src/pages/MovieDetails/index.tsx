@@ -1,8 +1,10 @@
 import { AxiosRequestConfig } from 'axios';
 import ReviewFormCard from 'components/ReviewFormCard';
 import ReviewListCard from 'components/ReviewListCard';
+import ReviewMovieCard from 'components/ReviewMovieCard';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Movie } from 'types/movie';
 import { Review } from 'types/reviews';
 import { hasAnyRoles } from 'utils/auths';
 import { requestBackend } from 'utils/requests';
@@ -18,6 +20,8 @@ const MovieDetails = () => {
 
   const [reviews, setReviews] = useState<Review[]>([]);
 
+  const [movie, setMovie] = useState<Movie>();
+
   useEffect(() => {
     const config: AxiosRequestConfig = {
       method: 'GET',
@@ -30,6 +34,18 @@ const MovieDetails = () => {
     });
   }, [movieId]);
 
+  useEffect(() => {
+    const config: AxiosRequestConfig = {
+      method: 'GET',
+      url: `/movies/${movieId}`,
+      withCredentials: true,
+    };
+
+    requestBackend(config).then((response) => {
+      setMovie(response.data);
+    });
+  }, [movieId]);
+
   const handleInsertReview = (review: Review) => {
     const clone = [...reviews];
     clone.push(review);
@@ -38,8 +54,7 @@ const MovieDetails = () => {
 
   return (
     <div className="movie-details-container">
-      <h1>Tela detalhes do filme id: {movieId}</h1>
-
+      <ReviewMovieCard movie={movie} />
       {hasAnyRoles(['ROLE_MEMBER']) && (
         <ReviewFormCard movieId={movieId} onInsertReview={handleInsertReview} />
       )}

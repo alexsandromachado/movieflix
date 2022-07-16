@@ -53,7 +53,7 @@ const MovieDetails = () => {
   };
 
   return (
-    <div className="movie-details-container">
+    <div className="movie-details-container mx-auto">
       <ReviewMovieCard movie={movie} />
       {hasAnyRoles(['ROLE_MEMBER']) && (
         <ReviewFormCard movieId={movieId} onInsertReview={handleInsertReview} />

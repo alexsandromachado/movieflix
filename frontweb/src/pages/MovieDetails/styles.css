@@ -23,7 +23,7 @@
   }
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1200px) {
   .movie-details-container {
     max-width: 1120px;
     display: flex;

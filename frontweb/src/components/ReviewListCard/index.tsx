@@ -9,6 +9,7 @@ type Props = {
 const ReviewListCard = ({ reviews }: Props) => {
   return (
     <>
+    {reviews.length > 0 &&
       <div className="movie-review-list">
         {reviews.map((review) => (
           <div className="movie-review-item" key={review.id}>
@@ -21,7 +22,7 @@ const ReviewListCard = ({ reviews }: Props) => {
             <p>{review.text}</p>
           </div>
         ))}
-      </div>
+      </div>}
     </>
   );
 };

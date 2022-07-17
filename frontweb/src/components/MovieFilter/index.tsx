@@ -40,21 +40,30 @@ const ProductFilter = ({ onSubmitFilter }: Props) => {
     );
   }, []);
 
+  const customStyles = {
+    control: () => ({
+      display: "flex",
+      boxShadow: "none",
+      border: "1px solid #ffffff"
+    })
+  };
+
   return (
-    <div className="base-card product-filter-container">
-      <form onSubmit={handleSubmit(onSubmit)} className="product-filter-form">
-        <div className="product-filter-botton-container">
-          <div className="product-filter-category-container">
+    <div className="base-card movie-filter-container">
+      <form onSubmit={handleSubmit(onSubmit)} className="movie-filter-form">
+        <div className="movie-filter-botton-container">
+          <div className="movie-filter-genre-container">
             <Controller
               name="genre"
               control={control}
               render={({ field }) => (
                 <Select
                   {...field}
+                  styles={customStyles}
                   options={selectGenres}
                   isClearable
                   placeholder="Gênero"
-                  classNamePrefix="product-filter-select"
+                  classNamePrefix="movie-filter-select"
                   onChange={(value: Genre | null) =>
                     handleChangeGenre(value as Genre)
                   }

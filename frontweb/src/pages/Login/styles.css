@@ -79,6 +79,7 @@
 
 @media (min-width: 1200px) {
   .login-container {
+    max-width: 1120px;
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;

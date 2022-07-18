@@ -10,6 +10,10 @@
 }
 
 @media (min-width: 576px) {
+  .movie-details-container {
+    padding: 20px 20px 26px 20px;
+  }
+
   .movie-details-container h1 {
     max-width: none;
     padding-bottom: 25px;

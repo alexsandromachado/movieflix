@@ -60,7 +60,13 @@
 
 @media (min-width: 576px) {
   .login-container {
-    margin: 40px 48px 0px 48px;
+    text-align: center;
+    padding: 40px calc((100% - 479px) / 2) 0px calc((100% - 479px) / 2);
+  }
+
+  .login-card {
+    padding: 59px 45px 17px 45px;
+    max-width: 479px;
   }
 
   .login-card h1 {
@@ -72,16 +78,14 @@
 }
 
 @media (min-width: 768px) {
-  .login-container {
-    margin: 40px 145px 0px 145px;
-  }
 }
 
 @media (min-width: 1200px) {
   .login-container {
-    max-width: 1120px;
+    padding: unset;
+    max-width: 1000px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between !important;
     flex-direction: row-reverse;
     align-items: center;
     margin: 38px 100px 0px 100px;
@@ -93,5 +97,11 @@
 
   .img-card {
     display: unset;
+  }
+}
+
+@media (min-width: 1400px) {
+  .login-container {
+    max-width: 1250px;
   }
 }

@@ -1,5 +1,5 @@
 .catalog-container {
-  padding: 12px 15px;
+  padding: 12px 10px;
 }
 
 .catalog-container h1 {
@@ -24,7 +24,7 @@
 
 @media (min-width: 576px) {
   .catalog-container {
-    padding: 40px;
+    padding: 20px;
   }
 
   .catalog-container h1 {
@@ -37,16 +37,24 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
   .catalog-container {
-    max-width: 1120px;
+    padding: 40px;
   }
+}
 
+@media (min-width: 1200px) {
   .catalog-container h1 {
     font-size: 48px;
   }
 
   .list-container li {
     font-size: 24px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .catalog-container {
+    max-width: 1250px;
   }
 }

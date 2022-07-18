@@ -59,6 +59,11 @@
 @media (min-width: 768px) {
   .review-card-container {
     padding: 40px 40px 48px 40px;
+    margin-bottom: 40px;
+  }
+
+  .movie-review-form {
+    margin-bottom: 40px;
   }
 
   .review-movie-description h4 {

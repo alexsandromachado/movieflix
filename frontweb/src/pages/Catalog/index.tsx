@@ -62,12 +62,14 @@ const Catalog = () => {
     <div className="catalog-container mx-auto">
       <Moviefilter onSubmitFilter={handleSubmitFilter} />
       <div className="list-container">
-        <div className="row">
+        <div className="row g-md-5 g-lg-5 g-xl-4">
           {page?.content.map((movie) => (
-            <div className="col-sm-6 col-lg-4 col-xl-3" key={movie.id}>
+            <div className="col-sm-6 col-lg-6 col-xl-3" key={movie.id}>
+              <div className="teste">
               <Link to={`/movies/${movie.id}`}>
                 <MovieCard movie={movie} />
               </Link>
+              </div>
             </div>
           ))}
         </div>

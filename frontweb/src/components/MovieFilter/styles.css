@@ -60,3 +60,9 @@
 .css-tj5bde-Svg {
   color: #ffffff !important;
 }
+
+@media (min-width: 768px) {
+  .movie-filter-container {
+    margin-bottom: 40px;
+  }
+}
